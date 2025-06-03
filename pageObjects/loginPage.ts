@@ -13,6 +13,8 @@ export class Login{
        this.page.on('dialog',dialog=>{
         expect(dialog.message).toEqual("Login Success")
         dialog.accept()
+        expect(dialog.message).toEqual("Insert Failed")
+        dialog.accept()
        })
     }
 
