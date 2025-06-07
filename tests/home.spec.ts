@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import {Login} from '../pageObjects/loginPage';
-import{AdminHomePage} from '../pageObjects/adminHomePage'
+import{AdminHomePage} from '../pageObjects/regesterStude'
 import cradintial from '../pageObjects/cradintial.json'
+import {StudeAttendance} from'../pageObjects/StudeAttendance'
+import {GenretReport}from '../pageObjects/genretReport'
 
 test.describe("student managment test",()=>{
   test.beforeEach('has title', async ({ page }) => {
@@ -11,9 +13,20 @@ test.describe("student managment test",()=>{
 });
 
 
-test('Login',async({page})=>{  
-    const adminHome=new AdminHomePage(page)
-    await adminHome.RegisterStudent()
-})     
+test('register student',async({page})=>{
+  const res= new AdminHomePage(page)
+  await res.RegisterStudent()
+  
+})
+test('StudeAttendance',async({page})=>{  
+
+    const attnd=new StudeAttendance(page)
+    await attnd.StudeAttendance()
+})    
+
+test('Genarate Student Report',async({page})=>{
+  const reportgen=new GenretReport(page)
+  await reportgen.report()
 })
 
+})
