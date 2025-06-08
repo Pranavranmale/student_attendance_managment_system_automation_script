@@ -29,7 +29,7 @@ export class AdminHomePage {
       await dialog.accept();
     });
 
-    await this.page.getByText("ADMIN CORNER").click();
+    // await this.page.getByText("ADMIN CORNER").click();
     await this.page.getByText("Register Student").click();
     await this.page.getByPlaceholder("Name").fill(studentName);
     await this.page.locator("#exampleInputEmail3").fill(prn);
@@ -44,7 +44,5 @@ export class AdminHomePage {
     // Click to trigger alert
     await this.page.locator('.container-scroller .container-fluid .grid-margin .card .card-body .btn-gradient-primary').click()
     await this.page.waitForTimeout(2000)
-   
-  
   }
 }
